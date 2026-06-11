@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAYK GROUP — Studio digital · Sites, identité QR & contenu vidéo · Sénégal</title>
+<meta name="description" content="RAYK GROUP, studio digital sénégalais. Sites web, cartes & menus QR, contenu vidéo et assistants IA pour faire grandir votre commerce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1F33; --navy-2:#102b45; --ink:#1b2330; --gold:#C8A04B; --gold-2:#d9b76a;
+    --cream:#F7F4EF; --cream-2:#efe9e0; --line:#e3dcd0; --muted:#6a7280; --white:#fff;
+    --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --r:14px; --shadow:0 18px 50px -20px rgba(10,31,51,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;color:var(--navy);letter-spacing:-.01em}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:.97rem;border-radius:999px;padding:14px 28px;cursor:pointer;border:1px solid transparent;transition:.25s}
+  .btn-gold{background:var(--gold);color:var(--navy)}
+  .btn-gold:hover{background:var(--gold-2);transform:translateY(-2px)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-dark:hover{background:var(--navy-2);transform:translateY(-2px)}
+  .btn-line{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
+  .btn-line:hover{border-color:#fff}
+  .btn-outline{background:transparent;border-color:var(--navy);color:var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+  svg.ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  header{position:sticky;top:0;z-index:60;background:rgba(247,244,239,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:1140px;margin:0 auto;padding:0 26px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{width:40px;height:40px;flex:0 0 40px}
+  .brand .nm{font-family:var(--serif);font-weight:600;font-size:1.18rem;color:var(--navy);letter-spacing:.02em}
+  .brand .nm i{font-style:normal;color:var(--gold)}
+  .menu{display:flex;gap:30px;align-items:center}
+  .menu a{font-size:.93rem;font-weight:500;color:#33404f}
+  .menu a:hover{color:var(--gold)}
+  .menu .cta{border:1px solid var(--navy);padding:9px 18px;border-radius:999px;color:var(--navy);font-weight:600}
+  .menu .cta:hover{background:var(--navy);color:#fff}
+  .burger{display:none;background:none;border:none;color:var(--navy);cursor:pointer}
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 380px at 85% -8%,rgba(200,160,75,.18),transparent 60%),radial-gradient(700px 400px at -10% 110%,rgba(27,108,168,.18),transparent 60%)}
+  .hero .wrap{position:relative;z-index:2;padding:84px 26px 92px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+  .hero .eyebrow{color:var(--gold-2)}
+  .hero h1{color:#fff;font-size:3.4rem;margin:18px 0 22px}
+  .hero h1 em{font-style:italic;color:var(--gold-2)}
+  .hero p.lead{font-size:1.16rem;color:#cdd7e2;max-width:540px;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-meta{display:flex;gap:30px;margin-top:46px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);flex-wrap:wrap}
+  .hero-meta div b{font-family:var(--serif);font-size:1.7rem;color:#fff;display:block}
+  .hero-meta div span{font-size:.85rem;color:#9fb0c2}
+  .hero-card{background:linear-gradient(160deg,#10314f,#0c2440);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+  .hero-card .hc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .hero-card .dot{width:11px;height:11px;border-radius:50%;background:#2bd06a;box-shadow:0 0 0 4px rgba(43,208,106,.18)}
+  .hero-card small{color:#9fb0c2}
+  .chatline{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+  .chatline .av{width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--serif);font-size:.85rem;flex:0 0 30px}
+  .bub{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);padding:10px 14px;border-radius:12px;font-size:.9rem;color:#dfe7ef}
+  .bub.me{background:var(--gold);color:var(--navy);border:none;margin-left:auto}
+  .strip{background:var(--cream-2);border-bottom:1px solid var(--line)}
+  .strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 26px;flex-wrap:wrap}
+  .strip span{font-size:.92rem;color:var(--muted);display:flex;align-items:center;gap:9px}
+  .strip span svg{width:18px;height:18px;stroke:var(--gold)}
+  section{padding:92px 0}
+  .lead-head{max-width:640px;margin-bottom:54px}
+  .lead-head h2{font-size:2.4rem;margin:14px 0 14px}
+  .lead-head p{color:var(--muted);font-size:1.06rem}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 28px;transition:.25s}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .svc .ic-wrap{width:52px;height:52px;border-radius:13px;background:var(--cream);color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .svc .ic-wrap svg{width:26px;height:26px;stroke-width:1.5}
+  .svc h3{font-size:1.35rem;margin-bottom:12px}
+  .svc ul{list-style:none}
+  .svc li{position:relative;padding:7px 0 7px 22px;color:#3b4654;font-size:.96rem;border-bottom:1px solid #f1ece3}
+  .svc li:last-child{border-bottom:none}
+  .svc li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .ai{background:var(--navy);color:#fff;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+  .ai .txt{padding:54px 48px}
+  .ai .eyebrow{color:var(--gold-2)}
+  .ai h2{color:#fff;font-size:2.1rem;margin:14px 0 16px}
+  .ai p{color:#cdd7e2;margin-bottom:22px}
+  .ai ul{list-style:none;margin-bottom:26px}
+  .ai li{padding:8px 0 8px 30px;position:relative;color:#e2e9f1}
+  .ai li svg{position:absolute;left:0;top:10px;width:20px;height:20px;stroke:var(--gold-2)}
+  .ai .panel{background:linear-gradient(160deg,#0c2440,#0a1c2f);padding:48px;display:flex;align-items:center;justify-content:center}
+  .mock{width:100%;max-width:300px;background:#0d263e;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+  .mock .mh{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:14px}
+  .mock .mh .av{width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--serif)}
+  .mock .mh b{font-size:.92rem}.mock .mh small{color:#8aa0b6;font-size:.72rem;display:block}
+  .pricing{background:var(--cream-2)}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .ptable{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .ptable .ph{padding:22px 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  .ptable .ph svg{width:22px;height:22px;stroke:var(--gold)}
+  .ptable .ph h3{font-size:1.25rem}
+  .pr{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 26px;border-bottom:1px solid #f1ece3}
+  .pr:last-child{border-bottom:none}
+  .pr .nm{color:#374251;font-size:.96rem}.pr .nm b{color:var(--navy)}
+  .pr .am{font-weight:700;color:var(--navy);white-space:nowrap;text-align:right}
+  .pr .am s{display:block;font-weight:400;color:#aeb6c0;font-size:.74rem}
+  .pr.hint{background:#fbf7ec}.pr.hint .nm{color:#7a6a3e;font-size:.9rem}
+  .pack{margin-top:30px;background:var(--navy);color:#fff;border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .pack::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(200,160,75,.22),transparent 70%);border-radius:50%}
+  .pack .pk-l{position:relative;z-index:2}
+  .pack .eyebrow{color:var(--gold-2)}
+  .pack h3{color:#fff;font-size:1.8rem;margin:10px 0 8px}
+  .pack p{color:#cdd7e2;max-width:440px}
+  .pack .pk-r{position:relative;z-index:2;text-align:center}
+  .pack .pk-r b{font-family:var(--serif);font-size:2.8rem;color:var(--gold-2);display:block;line-height:1}
+  .pack .pk-r small{color:#9fb0c2}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .why .ic-wrap{width:48px;height:48px;border-radius:12px;background:#fff;border:1px solid var(--line);color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .why h4{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:1.12rem;margin-bottom:8px}
+  .why p{color:var(--muted);font-size:.94rem}
+  .process{background:var(--navy);color:#fff}
+  .process .lead-head h2{color:#fff}.process .lead-head p{color:#bccadd}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .step{position:relative;padding:28px 22px 8px}
+  .step:not(:last-child)::after{content:"";position:absolute;top:42px;right:-2px;width:100%;height:1px;background:repeating-linear-gradient(90deg,rgba(200,160,75,.5) 0 8px,transparent 8px 16px)}
+  .step b{display:flex;width:50px;height:50px;align-items:center;justify-content:center;border:1px solid var(--gold);color:var(--gold-2);border-radius:50%;font-family:var(--serif);font-size:1.2rem;margin-bottom:18px;background:var(--navy);position:relative;z-index:2}
+  .step h4{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin-bottom:8px}
+  .step p{color:#bccadd;font-size:.92rem}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .q{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px}
+  .q .stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px;font-size:.9rem}
+  .q p{font-family:var(--serif);font-size:1.05rem;color:var(--ink);line-height:1.5;margin-bottom:18px}
+  .q .who{display:flex;align-items:center;gap:12px}
+  .q .who .av{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600}
+  .q .who b{display:block;color:var(--navy);font-size:.95rem}
+  .q .who span{color:var(--muted);font-size:.82rem}
+  .faq{max-width:780px;margin:0 auto}
+  .fitem{border-bottom:1px solid var(--line)}
+  .fq{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;font-family:var(--serif);font-size:1.12rem;color:var(--navy);font-weight:600}
+  .fq svg{width:22px;height:22px;stroke:var(--gold);transition:.25s;flex:0 0 22px}
+  .fq.open svg{transform:rotate(45deg)}
+  .fa{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted)}
+  .fa p{padding:0 0 22px}
+  .cta-final{background:var(--navy);color:#fff;text-align:center;border-radius:24px;padding:64px 40px;position:relative;overflow:hidden}
+  .cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 280px at 50% -20%,rgba(200,160,75,.2),transparent 60%)}
+  .cta-final>*{position:relative;z-index:2}
+  .cta-final h2{color:#fff;font-size:2.3rem;margin-bottom:14px}
+  .cta-final p{color:#cdd7e2;max-width:520px;margin:0 auto 30px;font-size:1.05rem}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1db954;transform:translateY(-2px)}
+  footer{background:#08182a;color:#9fb0c2;padding:54px 0 30px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .fgrid h5{color:#fff;font-family:var(--serif);font-weight:600;margin-bottom:14px;font-size:1rem}
+  .fgrid a{display:block;color:#9fb0c2;padding:5px 0;font-size:.92rem}
+  .fgrid a:hover{color:var(--gold-2)}
+  .fbot{display:flex;justify-content:space-between;align-items:center;padding-top:22px;flex-wrap:wrap;gap:12px;font-size:.85rem}
+  .chat-launch{position:fixed;right:22px;bottom:22px;z-index:90;display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:13px 20px 13px 14px;cursor:pointer;box-shadow:var(--shadow);font-family:var(--sans);font-weight:600;font-size:.92rem;transition:.2s}
+  .chat-launch:hover{transform:translateY(-2px)}
+  .chat-launch .pulse{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700}
+  .chat-panel{position:fixed;right:22px;bottom:22px;z-index:95;width:360px;max-width:calc(100vw - 30px);height:540px;max-height:calc(100vh - 40px);background:#fff;border-radius:20px;box-shadow:0 30px 70px -20px rgba(10,31,51,.55);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+  .chat-panel.on{display:flex}
+  .cp-head{background:var(--navy);color:#fff;padding:18px;display:flex;align-items:center;gap:12px}
+  .cp-head .av{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700}
+  .cp-head b{font-size:.98rem}.cp-head small{color:#9fb0c2;font-size:.76rem;display:flex;align-items:center;gap:6px}
+  .cp-head small::before{content:"";width:8px;height:8px;border-radius:50%;background:#2bd06a}
+  .cp-head .x{margin-left:auto;background:none;border:none;color:#9fb0c2;cursor:pointer;font-size:1.3rem;line-height:1}
+  .cp-body{flex:1;overflow-y:auto;padding:18px;background:var(--cream);display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:82%;padding:11px 14px;border-radius:14px;font-size:.92rem;line-height:1.45}
+  .msg.bot{background:#fff;border:1px solid var(--line);color:#2c3744;align-self:flex-start;border-bottom-left-radius:4px}
+  .msg.usr{background:var(--gold);color:var(--navy);align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
+  .cp-quick{padding:12px;display:flex;flex-wrap:wrap;gap:8px;background:#fff;border-top:1px solid var(--line)}
+  .qbtn{background:var(--cream);border:1px solid var(--line);color:var(--navy);border-radius:999px;padding:8px 14px;font-size:.84rem;cursor:pointer;font-family:var(--sans);font-weight:500;transition:.15s}
+  .qbtn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+  @media(max-width:920px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px}.hero-card{order:2}
+    .ai{grid-template-columns:1fr}.ai .panel{display:none}
+    .grid3,.grid4,.quotes,.grid2,.steps{grid-template-columns:1fr}
+    .step:not(:last-child)::after{display:none}
+    .menu{display:none}.burger{display:block}
+    .hero h1{font-size:2.5rem}.fgrid{grid-template-columns:1fr}
+  }
+  .cp-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+  .cp-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-family:var(--sans);font-size:.92rem;outline:none}
+  .cp-input input:focus{border-color:var(--gold)}
+  .cp-input button{flex:0 0 44px;height:44px;border:none;border-radius:50%;background:var(--navy);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+  .cp-input button:hover{background:var(--gold);color:var(--navy)}
+  .typing{display:inline-flex;gap:4px;padding:2px 2px}
+  .typing i{width:7px;height:7px;border-radius:50%;background:#aab4c0;display:inline-block;animation:tp 1s infinite}
+  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+  @keyframes tp{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#0A1F33"/>
+        <circle cx="24" cy="24" r="23" fill="none" stroke="#C8A04B" stroke-width="1.4"/>
+        <text x="20" y="30" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="17" font-weight="700" fill="#F7F4EF">R</text>
+        <text x="29" y="30" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="17" font-weight="700" fill="#C8A04B">K</text>
+      </svg>
+      <span class="nm">RAYK <i>GROUP</i></span>
+    </a>
+    <div class="menu">
+      <a href="#services">Services</a>
+      <a href="#ia">Assistant IA</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact" class="cta">Demander un devis</a>
+    </div>
+    <button class="burger" onclick="var m=document.querySelector('.menu');m.style.display=(getComputedStyle(m).display==='none'?'flex':'none');m.style.flexDirection='column';m.style.position='absolute';m.style.top='74px';m.style.right='0';m.style.background='#F7F4EF';m.style.padding='18px 26px';m.style.gap='14px';m.style.borderBottom='1px solid #e3dcd0';m.style.width='220px'">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+<a id="top"></a>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Studio digital · Sénégal</span>
+      <h1>Le digital qui donne de la <em>valeur</em> à votre commerce.</h1>
+      <p class="lead">RAYK GROUP conçoit votre site, votre identité QR et vos vidéos — et installe des assistants IA qui répondent à vos clients jour et nuit. Une présence en ligne soignée, à partir de 50 000 FCFA.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" data-wa data-msg="Bonjour RAYK GROUP, je souhaite un devis." href="#contact">Démarrer mon projet</a>
+        <a class="btn btn-line" href="#tarifs">Découvrir nos tarifs</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>50 000 F</b><span>le site vitrine</span></div>
+        <div><b>4-en-1</b><span>Web · QR · Vidéo · IA</span></div>
+        <div><b>48h</b><span>devis &amp; démarrage</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-top"><div style="display:flex;align-items:center;gap:9px"><span class="dot"></span><small>Assistant RAYK · en ligne</small></div><small>IA</small></div>
+      <div class="chatline"><div class="av">RK</div><div class="bub">Bonjour 👋 Je peux vous présenter un devis tout de suite. Quel est votre besoin ?</div></div>
+      <div class="chatline"><div class="bub me">Je veux un site + une carte QR</div></div>
+      <div class="chatline"><div class="av">RK</div><div class="bub">Parfait. Le Pack Lancement (site + carte QR + 4 vidéos) est à 89 000 F. Je vous mets en relation ?</div></div>
+    </div>
+  </div>
+</section>
+<div class="strip">
+  <div class="wrap">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Devis gratuit sous 48h</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Paiement Orange Money &amp; Wave</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> On se déplace chez vous</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Prix fixes, sans surprise</span>
+  </div>
+</div>
+<section id="services">
+  <div class="wrap">
+    <div class="lead-head">
+      <span class="eyebrow">Nos métiers</span>
+      <h2>Tout ce qu'il faut pour exister en ligne.</h2>
+      <p>Quatre savoir-faire réunis dans un même studio, pensés pour travailler ensemble et faire grandir votre activité.</p>
+    </div>
+    <div class="grid3">
+      <article class="svc">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <h3>Sites web</h3>
+        <ul><li>Sites vitrines clairs et professionnels</li><li>Boutiques e-commerce (Orange Money, Wave)</li><li>Hébergement, domaine &amp; maintenance</li><li>Optimisé mobile &amp; référencement Google</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><path d="M13 13h3v3M20 16v4M16 20h4"/></svg></div>
+        <h3>Identité QR</h3>
+        <ul><li>Cartes de visite digitales à QR code</li><li>Menus QR pour restaurants &amp; cafés</li><li>Flyers, visuels réseaux &amp; signatures</li><li>QR pour vitrine, emballage &amp; affiches</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 9 6-3v12l-6-3"/></svg></div>
+        <h3>Contenu vidéo</h3>
+        <ul><li>Tournage sur place de votre commerce</li><li>Montage de réels &amp; TikTok dynamiques</li><li>Gestion de vos pages &amp; publications</li><li>Publicité ciblée Facebook &amp; Instagram</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="ia" style="padding-top:0">
+  <div class="wrap">
+    <div class="ai">
+      <div class="txt">
+        <span class="eyebrow">Nouveau · Intelligence artificielle</span>
+        <h2>Un assistant IA qui répond à vos clients 24h/24.</h2>
+        <p>Vos clients posent des questions à toute heure. Nous installons un assistant intelligent sur votre WhatsApp et votre site : il renseigne, prend les commandes et fixe les rendez-vous — même quand vous dormez.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Répond aux questions fréquentes automatiquement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Présente vos produits, prix et menu</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Prend les commandes &amp; réservations</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vous transmet les contacts intéressants</li>
+        </ul>
+        <p style="color:#d9b76a;font-weight:600;margin-bottom:18px">À partir de 15 000 F/mois · installation 25 000 F · réponses illimitées 24h/24.</p>
+        <a class="btn btn-gold" data-wa data-msg="Bonjour, je veux un assistant IA WhatsApp pour mon commerce." href="#contact">Installer mon assistant IA</a>
+      </div>
+      <div class="panel">
+        <div class="mock">
+          <div class="mh"><div class="av">RK</div><div><b>Assistant RAYK</b><small>répond en quelques secondes</small></div></div>
+          <div class="chatline"><div class="bub" style="font-size:.85rem">Bonjour ! Le restaurant est ouvert jusqu'à 23h. Voici notre menu 🍽️</div></div>
+          <div class="chatline"><div class="bub me" style="font-size:.85rem">Je peux réserver pour 4 ?</div></div>
+          <div class="chatline"><div class="bub" style="font-size:.85rem">Bien sûr ! Pour quelle heure ce soir ?</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pricing" id="tarifs">
+  <div class="wrap">
+    <div class="lead-head center">
+      <span class="eyebrow">Tarifs</span>
+      <h2>Les prix les plus accessibles du marché.</h2>
+      <p>Transparents et fixes. À côté de chaque prestation : ce que les autres facturent habituellement (barré).</p>
+    </div>
+    <div class="grid2">
+      <div class="ptable">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><h3>Sites &amp; identité digitale</h3></div>
+        <div class="pr"><span class="nm">Site vitrine simple (3-5 pages)</span><span class="am">50 000 F<s>dès 300 000 F</s></span></div>
+        <div class="pr"><span class="nm">Site vitrine pro (SEO, 8-15 pages)</span><span class="am">120–175k F<s>dès 800 000 F</s></span></div>
+        <div class="pr"><span class="nm">Boutique e-commerce</span><span class="am">250–450k F<s>dès 1 500 000 F</s></span></div>
+        <div class="pr"><span class="nm">Carte de visite digitale QR</span><span class="am">3–7k F</span></div>
+        <div class="pr"><span class="nm">Menu QR (restaurant / café)</span><span class="am">10–25k F</span></div>
+        <div class="pr"><span class="nm">Maintenance + hébergement / an</span><span class="am">25–40k F</span></div>
+      </div>
+      <div class="ptable">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 9 6-3v12l-6-3"/></svg><h3>Vidéo, réseaux &amp; IA <span style="font-size:.8rem;color:var(--muted)">/ mois</span></h3></div>
+        <div class="pr"><span class="nm"><b>Découverte</b> — 4 vidéos + 8 posts</span><span class="am">25–40k F</span></div>
+        <div class="pr"><span class="nm"><b>Croissance</b> — 8 vidéos + reporting</span><span class="am">60–100k F</span></div>
+        <div class="pr"><span class="nm"><b>Premium</b> — stratégie + pub Meta</span><span class="am">150–250k F</span></div>
+        <div class="pr"><span class="nm">Assistant IA WhatsApp — répond à vos messages</span><span class="am">15 000 F/mois<s>+ 25 000 F installation</s></span></div>
+        <div class="pr"><span class="nm">Vidéo à l'unité (tournage + montage)</span><span class="am">7–15k F</span></div>
+        <div class="pr hint"><span class="nm">Le secret : un abonnement = de la visibilité chaque mois.</span><span class="am"></span></div>
+      </div>
+    </div>
+    <div class="pack" id="pack">
+      <div class="pk-l">
+        <span class="eyebrow">Offre de lancement</span>
+        <h3>Pack Lancement</h3>
+        <p>Tout pour démarrer d'un coup : un site vitrine, une carte de visite QR et 4 vidéos pour vos réseaux. Existez en ligne dès cette semaine.</p>
+      </div>
+      <div class="pk-r">
+        <b>89 000 F</b>
+        <small>au lieu de 130 000 F · paiement unique</small>
+        <div style="margin-top:16px"><a class="btn btn-gold" data-wa data-msg="Bonjour, je veux le Pack Lancement à 89 000 F." href="#contact">Je veux ce pack</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="lead-head">
+      <span class="eyebrow">Pourquoi RAYK GROUP</span>
+      <h2>Proche, rapide, et au prix juste.</h2>
+    </div>
+    <div class="grid4">
+      <div class="why"><div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h4>Prix imbattables</h4><p>Les tarifs les plus bas du marché, sans rogner sur le soin apporté.</p></div>
+      <div class="why"><div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></div><h4>Proximité</h4><p>On se déplace, on filme votre commerce, on parle votre langue.</p></div>
+      <div class="why"><div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div><h4>Rapidité</h4><p>Devis sous 48h et livraison rapide grâce à nos méthodes.</p></div>
+      <div class="why"><div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4>Tout-en-un</h4><p>Web, QR, vidéo et IA chez un seul interlocuteur, en cohérence.</p></div>
+    </div>
+  </div>
+</section>
+<section class="process">
+  <div class="wrap">
+    <div class="lead-head">
+      <span class="eyebrow">La méthode</span>
+      <h2>Du premier message à votre commerce en ligne.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><h4>On discute</h4><p>Vous nous parlez de votre activité et de vos besoins, gratuitement.</p></div>
+      <div class="step"><b>02</b><h4>On propose</h4><p>Devis clair sous 48h, à prix fixe, sans mauvaise surprise.</p></div>
+      <div class="step"><b>03</b><h4>On réalise</h4><p>Site, carte QR, tournage, montage et installation de votre IA.</p></div>
+      <div class="step"><b>04</b><h4>Vous vendez</h4><p>Votre commerce est en ligne, visible et prêt à attirer des clients.</p></div>
+    </div>
+  </div>
+</section>
+<section id="avis">
+  <div class="wrap">
+    <div class="lead-head center">
+      <span class="eyebrow">Ils nous font confiance</span>
+      <h2>Ce que disent nos premiers clients.</h2>
+      <p style="font-size:.86rem;color:#aeb6c0">Exemples à remplacer par vos vrais témoignages clients.</p>
+    </div>
+    <div class="quotes">
+      <div class="q"><div class="stars">★★★★★</div><p>« En une semaine j'avais mon site et ma carte QR. Mes clients scannent et commandent direct. »</p><div class="who"><div class="av">AF</div><div><b>Awa Fall</b><span>Boutique de cosmétiques</span></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>« Les vidéos ont fait exploser ma page Instagram. Beaucoup plus d'appels qu'avant. »</p><div class="who"><div class="av">MS</div><div><b>Modou Sow</b><span>Restaurant · Dakar</span></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>« Sérieux, rapides et à un prix correct. L'assistant WhatsApp répond à ma place toute la journée. »</p><div class="who"><div class="av">FN</div><div><b>Fatou Ndiaye</b><span>Salon de beauté</span></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="pricing">
+  <div class="wrap">
+    <div class="lead-head center"><span class="eyebrow">Questions fréquentes</span><h2>Vous vous demandez peut-être…</h2></div>
+    <div class="faq">
+      <div class="fitem"><button class="fq">Combien de temps pour livrer un site ?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14"/></svg></button><div class="fa"><p>Comptez quelques jours pour un site vitrine simple, une fois vos textes et photos reçus. Le devis est livré sous 48h.</p></div></div>
+      <div class="fitem"><button class="fq">Comment se passe le paiement ?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14"/></svg></button><div class="fa"><p>Orange Money, Wave, espèces ou virement. En général un acompte au démarrage, le solde à la livraison.</p></div></div>
+      <div class="fitem"><button class="fq">C'est quoi exactement un assistant IA ?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14"/></svg></button><div class="fa"><p>Un programme intelligent branché sur votre WhatsApp ou votre site qui répond automatiquement à vos clients : horaires, prix, menu, prise de commande et de rendez-vous, à toute heure.</p></div></div>
+      <div class="fitem"><button class="fq">Vous travaillez partout au Sénégal ?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14"/></svg></button><div class="fa"><p>Oui. Les sites et cartes QR se font à distance partout. Pour le tournage vidéo, nous nous déplaçons dans votre zone.</p></div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-final">
+      <span class="eyebrow" style="color:var(--gold-2)">Parlons de votre projet</span>
+      <h2>Prêt à faire grandir votre commerce ?</h2>
+      <p>Écrivez-nous sur WhatsApp ou par e-mail. Le premier échange et le devis sont 100% gratuits.</p>
+      <div class="cta-actions">
+        <a class="btn btn-wa" data-wa data-msg="Bonjour RAYK GROUP, je souhaite un devis.">Écrire sur WhatsApp</a>
+        <a class="btn btn-line" href="mailto:rassibou0814@gmail.com">Envoyer un e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">
+          <svg class="mark" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" fill="#0A1F33"/><circle cx="24" cy="24" r="23" fill="none" stroke="#C8A04B" stroke-width="1.4"/><text x="20" y="30" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="700" fill="#F7F4EF">R</text><text x="29" y="30" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="700" fill="#C8A04B">K</text></svg>
+          <span class="nm" style="color:#fff">RAYK <i style="color:var(--gold)">GROUP</i></span>
+        </div>
+        <p style="max-width:300px;font-size:.92rem">Studio digital sénégalais. Sites web, identité QR, contenu vidéo et assistants IA pour les commerces qui veulent grandir.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <a href="#services">Sites web</a><a href="#services">Identité QR</a><a href="#services">Contenu vidéo</a><a href="#ia">Assistant IA</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a data-wa data-msg="Bonjour RAYK GROUP">WhatsApp</a><a href="mailto:rassibou0814@gmail.com">rassibou0814@gmail.com</a><a href="#">Instagram</a><a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 RAYK GROUP. Tous droits réservés.</span>
+      <span>Le digital qui fait vendre. · Sénégal</span>
+    </div>
+  </div>
+</footer>
+<button class="chat-launch" id="chatLaunch"><span class="pulse">RK</span> Assistant RAYK</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="cp-head">
+    <div class="av">RK</div>
+    <div><b>Assistant RAYK</b><small>en ligne</small></div>
+    <button class="x" id="chatClose">&times;</button>
+  </div>
+  <div class="cp-body" id="chatBody">
+    <div class="msg bot">Bonjour 👋 Je suis l'assistant de RAYK GROUP. Comment puis-je vous aider ?</div>
+  </div>
+  <div class="cp-quick" id="chatQuick"></div>
+  <form class="cp-input" id="chatForm" autocomplete="off">
+    <input id="chatInput" type="text" placeholder="Écrivez votre question…" />
+    <button type="submit" aria-label="Envoyer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></button>
+  </form>
+</div>
+<script>
+  var WA_NUMBER = "221773352576";
+  var AI_ENDPOINT = "/api/chat"; // Une fois le site deploye sur Vercel, l'IA repond ici. En local (fichier), repli automatique.
+  function waLink(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg || "Bonjour RAYK GROUP"); }
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.href = waLink(a.getAttribute('data-msg')); a.target="_blank"; });
+  document.querySelectorAll('.fq').forEach(function(b){
+    b.addEventListener('click', function(){
+      var fa=b.nextElementSibling, open=b.classList.contains('open');
+      document.querySelectorAll('.fq').forEach(function(x){x.classList.remove('open');x.nextElementSibling.style.maxHeight=null;});
+      if(!open){ b.classList.add('open'); fa.style.maxHeight=fa.scrollHeight+"px"; }
+    });
+  });
+  var KB = {
+    "Vos tarifs ?": "Nos prix demarrent a 50 000 F pour un site vitrine. Carte QR des 3 000 F, menu QR des 10 000 F, abonnements video des 25 000 F/mois et assistant IA a 15 000 F/mois. Je vous envoie le detail ?",
+    "Je veux un site": "Excellent choix ! Un site vitrine professionnel est a 50 000 F. Dites-moi votre activite et je prepare un devis gratuit.",
+    "Carte / menu QR": "La carte de visite QR est a 3-7 000 F et le menu QR pour restaurant a 10-25 000 F. On peut la creer en 24-48h.",
+    "Assistant IA": "Nous installons un assistant intelligent sur votre WhatsApp et votre site : il repond a vos clients 24h/24. Tarif : 15 000 F/mois + 25 000 F d'installation, reponses illimitees.",
+    "Le Pack Lancement": "Le Pack Lancement (site + carte QR + 4 videos) est a 89 000 F au lieu de 130 000 F. Ideal pour demarrer vite.",
+    "Parler a un humain": "Avec plaisir ! Cliquez ci-dessous pour discuter directement sur WhatsApp."
+  };
+  var body=document.getElementById('chatBody'), quick=document.getElementById('chatQuick'), panel=document.getElementById('chatPanel');
+  var convo=[];
+  var aiLive=(location.protocol==='http:'||location.protocol==='https:');
+  function addHTML(t){ var m=document.createElement('div'); m.className='msg bot'; m.innerHTML=t; body.appendChild(m); body.scrollTop=body.scrollHeight; return m; }
+  function addText(t,who){ var m=document.createElement('div'); m.className='msg '+(who||'bot'); m.textContent=t; body.appendChild(m); body.scrollTop=body.scrollHeight; return m; }
+  function typing(){ var m=document.createElement('div'); m.className='msg bot'; m.innerHTML='<span class="typing"><i></i><i></i><i></i></span>'; body.appendChild(m); body.scrollTop=body.scrollHeight; return m; }
+  function renderQuick(){
+    quick.innerHTML='';
+    Object.keys(KB).forEach(function(k){
+      var btn=document.createElement('button'); btn.className='qbtn'; btn.textContent=k;
+      btn.onclick=function(){
+        addText(k,'usr'); convo.push({role:'user',content:k});
+        setTimeout(function(){
+          addText(KB[k]); convo.push({role:'assistant',content:KB[k]});
+          if(k==="Parler a un humain"){ addHTML('<a class="btn btn-wa" style="padding:9px 18px;font-size:.85rem" target="_blank" href="'+waLink("Bonjour, je veux parler a un conseiller.")+'">Ouvrir WhatsApp</a>'); }
+          else { addHTML('Continuer sur WhatsApp ? <a href="'+waLink("Bonjour RAYK GROUP, "+k)+'" target="_blank" style="color:#1b6ca8;font-weight:600">Cliquez ici &rarr;</a>'); }
+        },300);
+      };
+      quick.appendChild(btn);
+    });
+  }
+  renderQuick();
+  var form=document.getElementById('chatForm'), input=document.getElementById('chatInput');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q=(input.value||'').trim(); if(!q) return;
+    input.value=''; addText(q,'usr'); convo.push({role:'user',content:q});
+    if(!aiLive || !AI_ENDPOINT){
+      setTimeout(function(){ addHTML("Pour une reponse intelligente, le site doit etre en ligne. En attendant, choisissez une option ci-dessus ou ecrivez-nous sur <a href='"+waLink("Bonjour RAYK GROUP, "+q)+"' target='_blank' style='color:#1b6ca8;font-weight:600'>WhatsApp</a>."); },250);
+      return;
+    }
+    var t=typing();
+    fetch(AI_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:convo})})
+      .then(function(r){return r.json();})
+      .then(function(d){ t.remove(); var reply=d.reply||"Desole, je n'ai pas pu repondre. Ecrivez-nous sur WhatsApp."; addText(reply); convo.push({role:'assistant',content:reply}); })
+      .catch(function(){ t.remove(); addHTML("Connexion a l'assistant impossible pour l'instant. Ecrivez-nous sur <a href='"+waLink("Bonjour RAYK GROUP")+"' target='_blank' style='color:#1b6ca8;font-weight:600'>WhatsApp</a>."); });
+  });
+  document.getElementById('chatLaunch').onclick=function(){ panel.classList.add('on'); this.style.display='none'; };
+  document.getElementById('chatClose').onclick=function(){ panel.classList.remove('on'); document.getElementById('chatLaunch').style.display='flex'; };
+</script>
+</body>
+</html>
